@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "featureModule": "ng generate module trains --route trains --module app.module",
-    "store:action": "ng generate action shipments/store/actions/delete/shipment --prefix add",
+    "store:action": "ng generate action shipments/store/actions/get/shipment --prefix get",
     "store:reducer": "ng generate reducer shipments/store/reducer/Shipment",
     "store:selector": "ng generate selector shipments/store/selector/Shipment"
   },
