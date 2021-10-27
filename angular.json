@@ -109,5 +109,8 @@
       }
     }
   },
-  "defaultProject": "helo"
+  "defaultProject": "helo",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
