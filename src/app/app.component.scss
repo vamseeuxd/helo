@@ -1,3 +1,7 @@
+@import '~bootstrap/scss/_functions';
+@import '~bootstrap/scss/_variables';
+@import '~bootstrap/scss/mixins/_breakpoints';
+
 .app-main-container {
   position: fixed;
   top: 50px;
@@ -18,5 +22,25 @@
     overflow: hidden auto;
     background-color: white;
     border-right: 1px solid #dfdfdf;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .app-side-nav {
+    width: 200px;
+    height: calc(100vh - 50px);
+    max-height: calc(100vh - 50px);
+    overflow: hidden auto;
+    background-color: white;
+    border-right: 1px solid #dfdfdf;
+    position: fixed;
+    z-index: 20000;
+    transition: all ease-in-out 0.3s;
+    left: 0px;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%) !important;
+
+    &.close {
+      left: -200px;
+    }
   }
 }
