@@ -1,0 +1,22 @@
+.app-main-container {
+  position: fixed;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  .app-side-nav {
+    width: 200px;
+    height: calc(100vh - 50px);
+    max-height: calc(100vh - 50px);
+    overflow: hidden auto;
+    background-color: white;
+    border-right: 1px solid #dfdfdf;
+  }
+}
