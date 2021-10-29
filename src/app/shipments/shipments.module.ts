@@ -5,6 +5,7 @@ import {ShipmentsRoutingModule} from './shipments-routing.module';
 import {ShipmentsComponent} from './shipments.component';
 import {StoreModule} from "@ngrx/store";
 import {reducer, shipmentFeatureKey} from "./store/reducer/shipment.reducer";
+import {MaterialModule} from "../material.module";
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import {reducer, shipmentFeatureKey} from "./store/reducer/shipment.reducer";
   imports: [
     CommonModule,
     StoreModule.forFeature(shipmentFeatureKey, reducer),
-    ShipmentsRoutingModule
+    ShipmentsRoutingModule,
+    MaterialModule
   ]
 })
 export class ShipmentsModule {

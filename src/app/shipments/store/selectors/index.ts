@@ -8,3 +8,8 @@ export const selectShipments = createSelector(
   selectShipmentsState,
   (state: fromShipment.ShipmentState) => state.shipments
 );
+
+export const selectShipmentColumns = createSelector(
+  selectShipmentsState,
+  (state: fromShipment.ShipmentState) => state.displayedColumns
+);
