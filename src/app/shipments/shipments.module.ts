@@ -6,18 +6,22 @@ import {ShipmentsComponent} from './shipments.component';
 import {StoreModule} from "@ngrx/store";
 import {reducer, shipmentFeatureKey} from "./store/reducer/shipment.reducer";
 import {MaterialModule} from "../material.module";
+import { AddShipmentComponent } from './add-shipment/add-shipment.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
   declarations: [
-    ShipmentsComponent
+    ShipmentsComponent,
+    AddShipmentComponent
   ],
-  imports: [
-    CommonModule,
-    StoreModule.forFeature(shipmentFeatureKey, reducer),
-    ShipmentsRoutingModule,
-    MaterialModule
-  ]
+    imports: [
+        CommonModule,
+        StoreModule.forFeature(shipmentFeatureKey, reducer),
+        ShipmentsRoutingModule,
+        MaterialModule,
+        FormsModule
+    ]
 })
 export class ShipmentsModule {
 }

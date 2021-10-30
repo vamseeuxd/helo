@@ -5,6 +5,8 @@ import {select, Store} from "@ngrx/store";
 import {ShipmentState} from "./store/reducer/shipment.reducer";
 import {selectShipmentColumns, selectShipments} from "./store/selectors";
 import {addShipment, deleteShipment} from "./store/actions";
+import {MatDialog} from "@angular/material/dialog";
+import {AddShipmentComponent} from "./add-shipment/add-shipment.component";
 
 @Component({
   selector: 'app-shipments',
@@ -15,7 +17,10 @@ export class ShipmentsComponent {
   shipments$: Observable<IShipment[]>;
   shipmentColumns$: Observable<string[]>;
 
-  constructor(private store: Store<ShipmentState>) {
+  constructor(
+    public dialog: MatDialog,
+    private store: Store<ShipmentState>
+  ) {
     this.shipments$ = this.store.pipe(select(selectShipments));
     this.shipmentColumns$ = this.store.pipe(select(selectShipmentColumns));
   }
@@ -26,6 +31,16 @@ export class ShipmentsComponent {
   }
 
   deleteShipment(shipment: IShipment) {
-    this.store.dispatch(deleteShipment(shipment));
+    const isConfirm = confirm('Are you sure!Do you want to delete?');
+    if(isConfirm){
+      this.store.dispatch(deleteShipment(shipment));
+    }
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AddShipmentComponent, {width: '300px'});
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 }

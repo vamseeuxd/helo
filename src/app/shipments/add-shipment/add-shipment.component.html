@@ -1,0 +1,39 @@
+<h1 mat-dialog-title>Add New Shipment</h1>
+<div mat-dialog-content>
+  <form #sampleForm="ngForm" class="row">
+
+    <div class="col-12">
+      <mat-form-field appearance="legacy" class="w-100">
+        <mat-label>Name</mat-label>
+        <input matInput required name="name" ngModel autocomplete="off">
+      </mat-form-field>
+    </div>
+
+    <div class="col-12">
+      <mat-form-field appearance="legacy" class="w-100">
+        <mat-label>Weight</mat-label>
+        <input matInput type="number" required name="weight" ngModel autocomplete="off">
+      </mat-form-field>
+    </div>
+
+    <div class="col-12">
+      <mat-form-field appearance="legacy" class="w-100">
+        <mat-label>Symbol</mat-label>
+        <input matInput required name="symbol" ngModel autocomplete="off">
+      </mat-form-field>
+    </div>
+
+    <div class="col-12">
+      <mat-form-field appearance="legacy" class="w-100">
+        <mat-label>City</mat-label>
+        <input matInput required name="city" ngModel autocomplete="off">
+      </mat-form-field>
+    </div>
+
+  </form>
+  <!--<pre>{{sampleForm.value|json}}</pre>-->
+</div>
+<div mat-dialog-actions class="d-flex">
+  <button class="ms-auto" mat-button (click)="onNoClick()">Cancel</button>
+  <button [disabled]="sampleForm.invalid" (click)="addShipment(sampleForm)" mat-raised-button color="primary" mat-button>Add Shipment</button>
+</div>
